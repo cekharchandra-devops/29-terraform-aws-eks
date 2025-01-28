@@ -8,6 +8,7 @@ module "ingress_alb" {
   subnets = local.public_subnet_ids
   create_security_group = false
   security_groups = [local.ingress_alb_sg_id]
+  enable_deletion_protection = false
   tags = merge(
     var.common_tags,
     var.ingress_alb_tags,
